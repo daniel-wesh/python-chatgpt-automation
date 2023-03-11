@@ -1,12 +1,14 @@
 #generic library to make http requests to an API
 import requests
+import os
 
 #endpoint
 api_endpoint = "https://api.openai.com/v1/completions"
-api_key = "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"
+#API Key
+api_key = os.getenv("OPENAI_API_KEY")
 
 #request headers as per the open ai API docs
-request_headers={
+request_headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer" + api_key
 }
